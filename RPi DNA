@@ -1,0 +1,36 @@
+# Define DNA-like data structure
+class DNASequence:
+    def __init__(self, sequence):
+        self.sequence = sequence
+
+# Define a sample knowledge base
+knowledge_base = {
+    "B": "Block: A defensive maneuver to deflect an attack.",
+    "K": "Kick: An offensive maneuver using the leg or foot.",
+    "P": "Punch: An offensive maneuver using the hand or fist.",
+}
+
+# Define a function to map symbols to skills
+def map_symbol_to_skill(symbol):
+    if symbol in knowledge_base:
+        return knowledge_base[symbol]
+    else:
+        return "Unknown Skill"
+
+# Define a function to learn from DNA-like data
+def learn_from_dna(dna_data):
+    skills = []
+    for symbol in dna_data.sequence:
+        skill = map_symbol_to_skill(symbol)
+        skills.append(skill)
+    return skills
+
+# User interaction
+user_dna = input("Enter your DNA-like sequence (e.g., BKP): ")
+dna_data = DNASequence(user_dna)
+
+learned_skills = learn_from_dna(dna_data)
+
+print("Learned Skills:")
+for skill in learned_skills:
+    print(skill)
